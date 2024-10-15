@@ -8,9 +8,7 @@ def send_telegram_notification(appointment, action):
     doctor_message = f"You have an appointment with {appointment.patient.username} on {appointment.date_time}."
     patient_message = f"Your appointment with Dr. {appointment.doctor.username} on {appointment.date_time} has been {action}."
 
-    # Send both messages to your own chat ID
-    chat_id = 1806940376  # Your Telegram chat ID
+    chat_id = 1806940376 
 
-    # Send messages with asyncio.run
     asyncio.run(bot.send_message(chat_id=chat_id, text=doctor_message))
     asyncio.run(bot.send_message(chat_id=chat_id, text=patient_message))
